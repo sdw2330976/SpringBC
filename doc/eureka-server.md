@@ -8,8 +8,7 @@
 ### maven config
 ---
 
-`
-
+```
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -39,5 +38,5 @@
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
         </dependency>
     </dependencies>
-`
+```
 
