@@ -1,0 +1,6 @@
+eureka:
+  instance:
+    appname: eureka-client.01
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
