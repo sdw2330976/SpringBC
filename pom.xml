@@ -25,6 +25,18 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <!-- Only needed at compile time -->
+        <version>1.16.14</version>
+        <scope>compile</scope>
+        <optional>true</optional>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <build>
     <finalName>SpringBC</finalName>
     <pluginManagement>
