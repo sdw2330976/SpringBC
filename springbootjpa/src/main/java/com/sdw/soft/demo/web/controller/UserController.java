@@ -8,8 +8,16 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import springfox.documentation.annotations.ApiIgnore;
+
+import javax.ws.rs.Path;
+import java.net.URI;
+import java.util.List;
 
 /**
  * Created by shangyindong on 2017/3/1.
@@ -22,6 +30,9 @@ public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
     @ApiOperation(value = "获取用户信息",notes = "根据id查询用户信息")
     @ApiImplicitParam(name = "id",value = "用户id",paramType = "path",dataType = "Long",required = true)
@@ -53,5 +64,17 @@ public class UserController {
     public String testExceptionHandler() throws Exception {
         System.out.println("test");
         throw new Exception("Test Exception Handler");
+    }
+    @ApiIgnore
+    @RequestMapping("/say/{serviceName:.+}")
+    public String say(@PathVariable String serviceName) {
+        List<ServiceInstance> instances = discoveryClient.getInstances(serviceName);
+        if (!CollectionUtils.isEmpty(instances)) {
+            URI uri = instances.get(0).getUri();
+            if (null != uri) {
+                return serviceName + " say: " + (new RestTemplate()).getForObject(uri+"/hello", String.class);
+            }
+        }
+        return "not found service" ;
     }
 }

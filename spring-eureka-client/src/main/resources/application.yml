@@ -1,11 +1,16 @@
 eureka:
   instance:
-    appname: eureka-client.01
+    appname: eureka.service.01
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
   client:
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
+    service-url: #服务注册中心地址
+      defaultZone: http://admin:admin@127.0.0.1:8761/eureka/
 spring:
   application:
-    name: eureka.client.01
+    name: eureka.service.01
 server:
-  port: 8090
+  port: ${PORT:${SERVER_PORT:0}}
+
+#management:
+#  security:
+#    enabled: true
