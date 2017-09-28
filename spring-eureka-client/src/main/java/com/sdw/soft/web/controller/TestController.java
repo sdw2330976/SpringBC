@@ -26,7 +26,7 @@ public class TestController {
 
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String hello() {
-        return "hello eureka";
+        return "hello eureka from" + discoveryClient.getLocalServiceInstance().getPort();
     }
 
     @RequestMapping(value = "/discovery/{applicationName:.+}",method = RequestMethod.GET)

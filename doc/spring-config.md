@@ -1,3 +1,7 @@
+
+
+![](/doc/photo/ribbon.png)
+
 http请求地址和资源文件映射如下:
 
 ```

@@ -17,6 +17,7 @@
     <module>spring-eureka-client</module>
       <module>spring-config-client</module>
       <module>spring-config-server</module>
+    <module>spring-ribbon</module>
   </modules>
   <packaging>pom</packaging>
 

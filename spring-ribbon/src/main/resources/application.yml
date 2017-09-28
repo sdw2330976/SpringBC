@@ -1,0 +1,9 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@127.0.0.1:8761/eureka/
+server:
+  port: 8764
+spring:
+  application:
+    name: spring-ribbon
