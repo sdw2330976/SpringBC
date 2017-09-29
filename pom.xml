@@ -18,6 +18,7 @@
       <module>spring-config-client</module>
       <module>spring-config-server</module>
     <module>spring-ribbon</module>
+      <module>spring-zuul</module>
   </modules>
   <packaging>pom</packaging>
 

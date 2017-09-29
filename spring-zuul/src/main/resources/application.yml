@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-zuul-gateway
+server:
+  port: 8889
+
+zuul:
+  routes:
+    hello:
+      path: /proxy/**
+      url: http://localhost:8764/
+    api-01:
+      path: /prod/**
+      serviceId: EUREKA.SERVICE-01
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@127.0.0.1:8761/eureka/
