@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.1.RELEASE</version>
+    <version>1.5.6.RELEASE</version>
   </parent>
 
   <groupId>com.sdw.soft</groupId>
@@ -32,8 +32,8 @@
     <dependencies>
       <dependency>
         <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-netflix</artifactId>
-        <version>1.3.4.RELEASE</version>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Dalston.SR3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
