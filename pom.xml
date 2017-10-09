@@ -19,6 +19,7 @@
       <module>spring-config-server</module>
     <module>spring-ribbon</module>
       <module>spring-zuul</module>
+      <module>spring-dashboard</module>
   </modules>
   <packaging>pom</packaging>
 
