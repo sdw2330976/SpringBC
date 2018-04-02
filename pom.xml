@@ -20,6 +20,7 @@
     <module>spring-ribbon</module>
       <module>spring-zuul</module>
       <module>spring-dashboard</module>
+      <module>codeSnippets2018</module>
   </modules>
   <packaging>pom</packaging>
 

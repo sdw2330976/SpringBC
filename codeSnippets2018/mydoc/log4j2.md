@@ -1,0 +1,37 @@
+# log4j 2.x
+
+### example
+
+```xml
+<configuration status="warn" monitorInterval="10" strict="true">
+    <properties>
+        <property name="faerroeFilePath">log/faerror.log</property>
+        <property name="crmLogFilePath">log/crmLog.log</property>
+    </properties>
+    <appenders>
+        <console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+        </console>
+        <RollingFile name="RollingFileError" fileName="${faerrorFilePath}"
+                     filePattern="${faerrorFilePath}.%d{yyyy-MM-dd}.txt" append="false">
+            <ThresholdFilter level="ERROR"/>
+            <PatternLayout pattern="%d - %c [%t] %-5p %c %x %l - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </appenders>
+
+    <loggers>
+        <logger name="com.sdw.soft" level="DEBUG"></logger>
+
+        <root level="info" includeLocation="true">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFileError"/>
+        </root>
+    </loggers>
+
+</configuration>
+
+```
+
