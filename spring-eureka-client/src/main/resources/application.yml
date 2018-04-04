@@ -9,8 +9,8 @@ spring:
   application:
     name: eureka.service-01
 server:
-  port: 8091
-#  port: ${PORT:${SERVER_PORT:0}}
+#  port: 8091
+  port: ${PORT:${SERVER_PORT:0}}
 
 #management:
 #  security:

@@ -12,6 +12,7 @@
   <artifactId>SpringBC</artifactId>
   <version>1.0.0</version>
   <modules>
+      <module>common-service</module>
     <module>springbootjpa</module>
     <module>spring-eureka-server</module>
     <module>spring-eureka-client</module>

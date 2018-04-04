@@ -18,6 +18,7 @@
 
 
     <properties>
+        <springbc.version>1.0.0</springbc.version>
         <curator.version>2.10.0</curator.version>
         <quartz.version>2.2.1</quartz.version>
         <webmagic.version>0.7.2</webmagic.version>
@@ -305,6 +306,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-messaging</artifactId>
             <version>4.0.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sdw.soft</groupId>
+            <artifactId>common-service</artifactId>
+            <version>${springbc.version}</version>
         </dependency>
     </dependencies>
 

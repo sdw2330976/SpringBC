@@ -3,7 +3,6 @@ package com.sdw.soft.demo.web.controller;
 import com.sdw.soft.demo.repository.UserRepository;
 import com.sdw.soft.demo.vo.User;
 import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import springfox.documentation.annotations.ApiIgnore;
 
-import javax.ws.rs.Path;
 import java.net.URI;
 import java.util.List;
 
