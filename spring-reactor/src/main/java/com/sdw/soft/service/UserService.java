@@ -17,11 +17,13 @@ public class UserService {
     private UserReactorRepository userReactorRepository;
 
     public Mono<User> save(User user) {
-        return userReactorRepository.findByUsername(user.getUsername())
+       return userReactorRepository.save(user)
+        .onErrorResume(e -> userReactorRepository.findByUsername(user.getUsername())
                 .flatMap(originalUser -> {
                     user.setId(originalUser.getId());
                     return userReactorRepository.save(user);
-                });
+                }));
+
     }
 
     public Mono<Long> deleteByUsername(String username) {

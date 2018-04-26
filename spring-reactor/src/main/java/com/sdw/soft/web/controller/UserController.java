@@ -3,9 +3,12 @@ package com.sdw.soft.web.controller;
 import com.sdw.soft.meta.User;
 import com.sdw.soft.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.time.Duration;
 
 /**
  * Created by shangyd on 2018/4/25.
@@ -33,8 +36,8 @@ public class UserController {
         return userService.findByUsername(username);
     }
 
-    @GetMapping("")
+    @GetMapping(value = "", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
     public Flux<User> findAll() {
-        return userService.findAll();
+        return userService.findAll().delayElements(Duration.ofSeconds(1));
     }
 }
