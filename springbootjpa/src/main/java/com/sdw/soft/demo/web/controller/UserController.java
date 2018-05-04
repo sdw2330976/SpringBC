@@ -37,7 +37,11 @@ public class UserController {
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public User view(@PathVariable("id")Long id){
         logger.info("UserControler test for logback configuration.");
-        return userRepository.findOne(id);
+        User user = new User();
+
+        user.setId(id);
+        return user;
+//        return userRepository.findOne(user);
     }
 
     @ApiOperation(value = "保存用户信息",notes = "")
