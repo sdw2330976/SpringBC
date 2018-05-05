@@ -318,6 +318,13 @@
             <artifactId>rocketmq-client</artifactId>
             <version>4.2.0</version>
         </dependency>
+
+        <!-- JMX -->
+        <dependency>
+            <groupId>com.sun.jdmk</groupId>
+            <artifactId>jmxtools</artifactId>
+            <version>1.2.1</version>
+        </dependency>
     </dependencies>
 
     <build>

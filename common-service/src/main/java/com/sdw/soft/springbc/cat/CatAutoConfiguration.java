@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created by shangyindong on 2017/12/26.
  */
-@Configuration
+//@Configuration
 public class CatAutoConfiguration {
 
     @Bean
