@@ -10,5 +10,7 @@ spring:
           default-label: master
           username: sdw2330976
           password:
+  profiles:
+    active: dev
 server:
   port: 8888
