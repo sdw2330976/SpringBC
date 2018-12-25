@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 //@Configuration
 public class CatAutoConfiguration {
 
-    @Bean
+//    @Bean
     public FilterRegistrationBean catFilter() {
         FilterRegistrationBean filterBean = new FilterRegistrationBean();
         CatFilter catFilter = new CatFilter();

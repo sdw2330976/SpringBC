@@ -5,7 +5,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://admin:admin@${eureka.instance.hostname}:${server.port}/eureka
+      defaultZone: http://admin:admin@${eureka.instance.hostname}:${server.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 0
   instance:
@@ -13,14 +13,7 @@ eureka:
 spring:
   application:
     name: eureka-server.01
-#配置安全认证
-security:
-  basic:
-    enabled: true
-  user:
-    name: admin
-    password: admin
-
-#management:
-#  security:
-#    enabled: true
+  security:
+    user:
+      name: admin
+      password: admin
