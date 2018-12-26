@@ -8,8 +8,8 @@ spring:
           uri: https://github.com/sdw2330976/config-repo
           search-paths: repo
           default-label: master
-          username: sdw2330976
-          password:
+#          username:
+#          password:
   profiles:
     active: dev
 server:
