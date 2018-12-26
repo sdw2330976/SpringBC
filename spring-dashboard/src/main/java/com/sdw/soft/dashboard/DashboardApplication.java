@@ -9,11 +9,11 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 /**
  * Created by shangyd on 2017/10/9.
  */
-@SpringBootApplication
 @EnableDiscoveryClient
 //@EnableFeignClients
 @EnableHystrixDashboard
 @EnableCircuitBreaker
+@SpringBootApplication
 public class DashboardApplication {
 
     public static void main(String[] args) {
