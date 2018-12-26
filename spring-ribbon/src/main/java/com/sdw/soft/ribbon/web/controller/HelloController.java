@@ -1,5 +1,6 @@
 package com.sdw.soft.ribbon.web.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.sdw.soft.ribbon.service.HelloService;
 import com.sdw.soft.ribbon.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class HelloController {
     @Autowired
     private HelloService helloService;
 
+    @HystrixCommand(fallbackMethod = "defaultHello")
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String hello() {
         return helloService.hello();
@@ -26,5 +28,9 @@ public class HelloController {
     @RequestMapping(value = "/user",method = RequestMethod.GET)
     public List<User> listUser() {
         return helloService.listUser();
+    }
+
+    private String defaultHello() {
+        return "hello service fallback";
     }
 }
