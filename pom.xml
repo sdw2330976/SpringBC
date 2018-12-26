@@ -46,21 +46,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-<!--            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-netflix</artifactId>
-                <version>1.4.4.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>-->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <!-- Only needed at compile time -->
-                <version>1.16.14</version>
-                <scope>compile</scope>
-                <optional>true</optional>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -72,6 +57,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.14</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>26.0-jre</version>
         </dependency>
     </dependencies>
     <build>

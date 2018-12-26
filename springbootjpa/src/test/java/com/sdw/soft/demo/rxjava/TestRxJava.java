@@ -1,7 +1,6 @@
 package com.sdw.soft.demo.rxjava;
 
 import com.google.common.base.Joiner;
-import org.hibernate.mapping.Join;
 import org.junit.Test;
 import rx.Observable;
 import rx.functions.Action1;

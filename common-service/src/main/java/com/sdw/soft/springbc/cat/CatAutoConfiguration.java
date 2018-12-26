@@ -2,8 +2,6 @@ package com.sdw.soft.springbc.cat;
 
 import com.dianping.cat.servlet.CatFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by shangyindong on 2017/12/26.
