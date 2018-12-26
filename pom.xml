@@ -23,6 +23,7 @@
         <module>spring-dashboard</module>
         <module>codeSnippets2018</module>
         <module>spring-reactor</module>
+        <module>spring-feign</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -62,6 +63,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <finalName>SpringBC</finalName>
         <pluginManagement>
