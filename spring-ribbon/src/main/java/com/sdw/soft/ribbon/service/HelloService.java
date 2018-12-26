@@ -23,7 +23,7 @@ public class HelloService {
     private RestTemplate restTemplate;
 
     public String hello() {
-        return restTemplate.getForObject("http://EUREKA.SERVICE-01/hello", String.class);
+        return restTemplate.getForObject("http://eureka-provider/api/front/test/hello", String.class);
 
     }
 
@@ -31,7 +31,7 @@ public class HelloService {
     @HystrixCommand(fallbackMethod = "defaultListUser")
     public List<User> listUser() {
         logger.info("-------------hystrix test-------------");
-        return restTemplate.getForObject("http://EUREKA.SERVICE-01/user", List.class);
+        return restTemplate.getForObject("http://eureka-provider/user", List.class);
     }
 
 

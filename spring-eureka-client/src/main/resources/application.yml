@@ -1,16 +1,16 @@
 eureka:
   instance:
-    appname: eureka.service-01
+    appname: eureka-provider
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
   client:
     service-url: #服务注册中心地址
       defaultZone: http://admin:admin@127.0.0.1:8761/eureka/
 spring:
   application:
-    name: eureka.service-01
-server:
-#  port: 8091
-  port: ${PORT:${SERVER_PORT:0}}
+    name: eureka-provider
+#server:
+#  port: 8092
+#  port: ${PORT:${SERVER_PORT:0}}
 
 #management:
 #  security:

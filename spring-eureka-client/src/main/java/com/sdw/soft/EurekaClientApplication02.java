@@ -3,6 +3,7 @@ package com.sdw.soft;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Profile;
 
 /**
  * Created by shangyindong on 2017/9/26.

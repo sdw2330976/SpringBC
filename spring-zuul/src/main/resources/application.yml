@@ -6,12 +6,15 @@ server:
 
 zuul:
   routes:
-    hello:
-      path: /proxy/**
-      url: http://localhost:8764/
+    tests:
+      path: /api/front/test/**
+      url: http://localhost:8091/
+      stripPrefix: false
     api-01:
       path: /prod/**
-      serviceId: EUREKA.SERVICE-01
+      serviceId: eureka-provider
+      stripPrefix: true
+  strip-prefix: false
 eureka:
   client:
     service-url:
