@@ -30,7 +30,7 @@ public class ScheduleTest {
             public void run() {
                 try {
                     long time = System.currentTimeMillis() / 1000 * 1000;
-//                    URL url = new URL("http://www.310tv.com/data/change.xml?" + time);
+//                    URL utils = new URL("http://www.310tv.com/data/change.xml?" + time);
                     URL url = new URL("http://www.310tv.com/data/change.xml?1528036604000");
                     HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
                     urlConnection.setDoOutput(true);

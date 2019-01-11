@@ -1,0 +1,28 @@
+auth:
+  permitAll:
+    - /login/**
+    - /web/**
+    - /api/**
+#security:
+#  oauth2:
+#    client:
+#      access-token-uri: /oauth/token
+#      client-id: frontend
+#      client-secret: frontend
+#    resource:
+#      user-info-uri: /user
+#      token-info-uri: /oauth/check_token
+#zuul:
+#  ribbon:
+#    eager-load:
+#      enabled: true # zuul饥饿加载
+#  host:
+#    max-total-connections: 200
+#    max-per-route-connections: 20
+#  routes:
+#    user:
+#      path: /user/**
+#      ignoredPatterns: /consul
+#      serviceId: user
+#      sensitiveHeaders: Cookie,Set-Cookie
+

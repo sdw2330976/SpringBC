@@ -1,0 +1,26 @@
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#      - id: service_to_web
+#        uri: lb://authdemo
+#        predicates:
+#        - Path=/demo/**
+#      default-filters:
+#        - name: RequestRateLimiter
+#          args:
+#            key-resolver: "#{@remoteAddrKeyResolver}"
+#            rate-limiter: "#{@customRateLimiter}"
+#  redis:
+#    host: localhost
+#    password:
+#    port: 6379
+#  cloud:
+
+
+server:
+  port: 9099
+spring:
+  application:
+    name: gatewayserver
+

@@ -24,6 +24,7 @@
         <module>codeSnippets2018</module>
         <module>spring-reactor</module>
         <module>spring-feign</module>
+        <module>spring-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
