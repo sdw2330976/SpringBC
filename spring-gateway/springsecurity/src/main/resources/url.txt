@@ -1,0 +1,11 @@
+1 http://localhost:8080/oauth/authorize?client_id=clientapp&redirect_uri=http://www.baidu.com&response_type=code&scope=read_profile
+2 https://www.baidu.com/?code=YXKl2I
+3 curl -X POST --user clientapp:123456 http://localhost:8080/oauth/token -H "content-type: application/x-www-form-urlencoded" -d "code=YXKl2I&grant_type=authorization_code&redirect_uri=http://www.baidu.com&scope=read_profile"
+    {
+        "access_token": "3511c580-9490-4e1a-8354-06293d8f724a",
+        "token_type": "bearer",
+        "expires_in": 43199,
+        "scope": "read_profile"
+    }
+
+4 http://localhost:8080/api/user/info?access_token=3511c580-9490-4e1a-8354-06293d8f724a
