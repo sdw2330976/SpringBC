@@ -1,0 +1,53 @@
+user:
+  username: admin
+  password: admin
+user2:
+  username: root
+  password: root
+spring:
+  profiles:
+    active: dev
+  application:
+    name: spring-feature
+  thymeleaf:
+    prefix: classpath:templates/
+    cache: false
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+        instance:
+          prefer-ip: true
+          metadata:
+            user:
+              name: admin
+              password: admin
+        username: admin
+        password: admin
+  security:
+    user:
+      name: admin
+      password: admin
+  servlet:
+    multipart:
+      enabled: true
+      location:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      file-size-threshold: 0
+      resolve-lazily: false
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 加载所有端点  默认只加载info/health
+      base-path: /
+  endpoint:
+    health:
+      show-details: always

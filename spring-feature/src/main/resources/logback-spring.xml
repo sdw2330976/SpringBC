@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="PATTERN" value="%red(%-12(%d{yyyy-MM-dd HH:mm:ss.SSS})) %green([%thread]) %highlight(|-%-5level) %boldMagenta(%c) %red([%L]) -| %cyan(%msg%n)" />
+    <property name="log_dir" value="D:/logs" />
+    <springProfile name="dev">
+        <!-- 读取 spring.application.name 属性来生成日志文件名
+            scope：作用域
+            name：在 logback-spring.xml 使用的键
+            source：application.properties 文件中的键
+            defaultValue：默认值
+         -->
+        <springProperty scope="context" name="logName" source="spring.application.name" defaultValue="myapp.log"></springProperty>
+
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>logs/${logName}.log</file>
+        </appender>
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${PATTERN}</pattern>
+            </encoder>
+        </appender>
+        <logger name="com.sdw.soft" level="INFO" />
+        <root level="info">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <!-- 每天产生一个文件 -->
+        <appender name="TEST-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${log_dir}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${log_dir}/info.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <!-- 文件最大保存历史数量 -->
+                <MaxHistory>100</MaxHistory>
+            </rollingPolicy>
+
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>${PATTERN}</pattern>
+            </layout>
+        </appender>
+
+        <root level="info">
+            <appender-ref ref="TEST-FILE" />
+        </root>
+    </springProfile>
+
+    <springProfile name="!prod">
+
+    </springProfile>
+</configuration>

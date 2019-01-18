@@ -25,6 +25,7 @@
         <module>spring-reactor</module>
         <module>spring-feign</module>
         <module>spring-gateway</module>
+        <module>spring-feature</module>
     </modules>
     <packaging>pom</packaging>
 

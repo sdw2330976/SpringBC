@@ -1,0 +1,5 @@
+user:
+  username: tom
+spring:
+  thymeleaf:
+    cache: false
