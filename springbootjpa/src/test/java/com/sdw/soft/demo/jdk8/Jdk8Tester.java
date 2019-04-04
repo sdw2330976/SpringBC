@@ -1,9 +1,7 @@
 package com.sdw.soft.demo.jdk8;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.lang.annotation.*;
+import java.util.*;
 import java.util.function.Supplier;
 
 public class Jdk8Tester {
@@ -26,6 +24,28 @@ public class Jdk8Tester {
         Car instance = Car.create(Car::new);
         cars.forEach(instance::follow);
 
+        Arrays.asList("1","2","3").forEach(e-> System.out.println(e));
+
+        Optional<String> name = Optional.ofNullable(null);
+        boolean present = name.isPresent();
+        System.out.println(present);
+        name = Optional.of(null);
+        System.out.println(name.isPresent());
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target({ElementType.METHOD})
+    @Documented
+    @Repeatable(Hellos.class)
+    @interface Hello {
+        String value();
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target({ElementType.METHOD})
+    @Documented
+    @interface Hellos{
+        Hello[] value();
     }
 
     @FunctionalInterface
@@ -35,9 +55,15 @@ public class Jdk8Tester {
         default void test1(){
             System.out.println("test");
         }
+
+        static void t() {
+            System.out.println("hello");
+        }
     }
 
     interface MatchOperator{
+        @Hello("1")
+        @Hello("2")
         int operate(int a, int b);
     }
 

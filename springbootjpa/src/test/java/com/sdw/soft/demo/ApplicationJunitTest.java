@@ -37,4 +37,8 @@ public class ApplicationJunitTest {
         .andDo(MockMvcResultHandlers.print())
         .andReturn();
     }
+
+    public static void main(String[] args) {
+
+    }
 }

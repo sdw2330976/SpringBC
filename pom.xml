@@ -26,6 +26,7 @@
         <module>spring-feign</module>
         <module>spring-gateway</module>
         <module>spring-feature</module>
+        <module>netty-push</module>
     </modules>
     <packaging>pom</packaging>
 
