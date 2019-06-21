@@ -76,5 +76,12 @@
         </dependency>
 
         <!-- log4j 2.x end -->
+
+
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>9.0.6</version>
+        </dependency>
     </dependencies>
 </project>

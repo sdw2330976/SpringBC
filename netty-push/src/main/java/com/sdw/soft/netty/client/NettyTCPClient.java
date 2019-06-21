@@ -23,6 +23,9 @@ public class NettyTCPClient {
             System.out.println(LocalTime.now());
             System.out.println(timeout);
         }, 5, TimeUnit.SECONDS);
+
+        timer.newTimeout(timeout ->
+                System.out.println("hello"), 10, TimeUnit.SECONDS);
         LockSupport.park();
     }
 

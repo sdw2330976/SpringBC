@@ -8,6 +8,8 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 
+import java.net.SocketAddress;
+
 /**
  * @author: shangyd
  * @create: 2019-04-04 17:26:28
@@ -31,7 +33,8 @@ public class EchoClient {
                         }
                     });
             ChannelFuture f = b.connect("127.0.0.1", 8089).sync();
-            f.channel().closeFuture().sync();
+            ChannelFuture channelFuture = f.channel().closeFuture();
+            channelFuture.sync();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -41,7 +44,14 @@ public class EchoClient {
     }
 
 
+    public static void main(String[] args) {
+        new EchoClient().init();
+    }
     public class EchoClientHandler extends ChannelOutboundHandlerAdapter {
+        @Override
+        public void connect(ChannelHandlerContext ctx, SocketAddress remoteAddress, SocketAddress localAddress, ChannelPromise promise) throws Exception {
+            super.connect(ctx, remoteAddress, localAddress, promise);
+        }
     }
 }
 
