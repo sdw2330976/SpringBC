@@ -83,5 +83,12 @@
             <artifactId>tomcat-embed-core</artifactId>
             <version>[9.0.17,)</version>
         </dependency>
+
+        <!--zkclient-->
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.1</version>
+        </dependency>
     </dependencies>
 </project>

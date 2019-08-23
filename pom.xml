@@ -27,6 +27,7 @@
         <module>spring-gateway</module>
         <module>spring-feature</module>
         <module>netty-push</module>
+        <module>server-route-spring-boot-starter</module>
     </modules>
     <packaging>pom</packaging>
 
